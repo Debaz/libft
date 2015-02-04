@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: klescaud <klescaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/26 02:56:07 by klescaud          #+#    #+#             */
-/*   Updated: 2015/02/04 21:40:30 by klescaud         ###   ########.fr       */
+/*   Created: 2015/02/04 21:01:22 by klescaud          #+#    #+#             */
+/*   Updated: 2015/02/04 21:40:13 by klescaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+char	*ft_strrev(char *s)
 {
-	char	*copy;
+	char	*tmp;
 	int		i;
 
-	if (!s1 || ((copy = malloc(sizeof(char) * ft_strlen(s1) + 1)) == NULL))
+	if (s == NULL)
+		return (NULL);
+	if ((tmp = malloc(sizeof(char) * (int)ft_strlen(s) + 1)) == NULL)
 		return (NULL);
 	i = 0;
-	while (i < (int)ft_strlen(s1))
+	while (i < (int)ft_strlen(s))
 	{
-		copy[i] = s1[i];
+		tmp[i] = s[(int)ft_strlen(s) - i];
 		i++;
 	}
-	copy[i] = '\0';
-	return (copy);
+	tmp[i] = '\0';
+	ft_strcpy(s, tmp);
+	free(tmp);
+	return (s);
 }

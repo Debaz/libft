@@ -6,37 +6,40 @@
 /*   By: klescaud <klescaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/26 03:40:26 by klescaud          #+#    #+#             */
-/*   Updated: 2015/01/26 03:50:10 by klescaud         ###   ########.fr       */
+/*   Updated: 2015/02/04 21:38:52 by klescaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_tenpow(int nb, int pow)
+static int		ft_tenpow(int nbr, int pow)
 {
-	int		power;
-
-	power = 1;
-	while (pow)
+	while (pow != 0)
 	{
-		power = power * 10;
+		nbr = nbr * 10;
 		pow--;
 	}
-	return (nb*power);
+	return (nbr);
 }
 
-int		ft_atoi(const char *str)
+int				ft_atoi(const char *str)
 {
+	char	*tmp;
+	int		res;
 	int		i;
 
+	if (str == NULL)
+		return (0);
+	tmp = ft_strdup(str);
+	tmp = ft_strrev(tmp);
 	i = 0;
-	while (i < ft_strlen(str))
+	res = 0;
+	while (i < (int)ft_strlen(tmp))
 	{
-		if (i == 0 && str[i] == '-')
-			i++;
-		if (!ft_isdigit(str[i]))
-			return (0);
+		if (tmp[i] == '-' && ((i+1) == (int)ft_strlen(tmp)))
+			res = -res;
+		res = res + ft_tenpow((tmp[i] - 48), i);
 		i++;
 	}
-	
+	return (res);
 }

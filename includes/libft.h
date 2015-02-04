@@ -6,7 +6,7 @@
 /*   By: klescaud <klescaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/26 02:37:43 by klescaud          #+#    #+#             */
-/*   Updated: 2015/01/26 03:54:37 by klescaud         ###   ########.fr       */
+/*   Updated: 2015/02/04 21:37:56 by klescaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,11 @@ size_t	ft_strlen(const char *s);
 char	*ft_strdup(const char *s1);
 void	ft_putchar(char c);
 void	ft_putstr(const char *s);
+char	*ft_strrev(char *s);
+char	*ft_strcpy(char *dst, const char *src);
+int		ft_strcmp(const char *s1, const char *s2);
+int		ft_tolower(int c);
+int		ft_toupper(int c);
+int		ft_atoi(const char *str);
 
 #endif
