@@ -1,0 +1,29 @@
+Vous devez recoder les fonctions suivantes :
+• memset	
+• bzero		
+• memcpy	
+• memccpy	
+• memmove	
+• memchr	
+• memcmp	
+• strlen	OK
+• strdup	OK
+• strcpy	OK
+• strncpy	
+• strcat	
+• strncat	
+• strlcat	
+• strchr	
+• strrchr	
+• strstr	
+• strnstr	
+• strcmp	OK
+• strncmp	
+• atoi		
+• isalpha	OK
+• isdigit	OK
+• isalnum	OK
+• isascii	OK
+• isprint	OK
+• toupper	OK
+• tolower	OK
