@@ -6,9 +6,9 @@ Vous devez recoder les fonctions suivantes :
 • memmove	
 • memchr	
 • memcmp	
-• strlen	OK
-• strdup	OK
-• strcpy	OK
+• strlen
+• strdup
+• strcpy
 • strncpy	
 • strcat	
 • strncat	
@@ -17,13 +17,13 @@ Vous devez recoder les fonctions suivantes :
 • strrchr	
 • strstr	
 • strnstr	
-• strcmp	OK
+• strcmp
 • strncmp	
-• atoi		
-• isalpha	OK
-• isdigit	OK
-• isalnum	OK
-• isascii	OK
-• isprint	OK
-• toupper	OK
-• tolower	OK
+• atoi
+• isalpha
+• isdigit
+• isalnum
+• isascii
+• isprint
+• toupper
+• tolower
