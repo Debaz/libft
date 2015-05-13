@@ -6,7 +6,7 @@
 #    By: klescaud <klescaud@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/04 21:24:16 by klescaud          #+#    #+#              #
-#    Updated: 2015/05/13 19:01:05 by klescaud         ###   ########.fr        #
+#    Updated: 2015/05/13 19:05:50 by klescaud         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -26,7 +26,7 @@ SRCS =		./sources/ft_putchar.c \
 			./sources/ft_toupper.c \
 			./sources/ft_tolower.c
 
-CFLAGS = 	-Wall -Wextra -Werror $(INCLUDES)
+CFLAGS = 	-Wall -Wextra -Werror
 
 OBJ =		ft_putchar.o \
 			ft_putchar_fd.o \
