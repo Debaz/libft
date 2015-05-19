@@ -12,7 +12,9 @@
 
 #include <libft.h>
 
-int		main(void)
+int		main(int ac, char **av)
 {
-	ft_putendl("Ceci est un test !");
+  if (ac == 3)
+	ft_putendl(ft_strjoin(av[1], av[2]));
+  return (0);
 }

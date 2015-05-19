@@ -24,7 +24,10 @@ SRCS =		./sources/ft_putchar.c \
 			./sources/ft_isascii.c \
 			./sources/ft_isprint.c \
 			./sources/ft_toupper.c \
-			./sources/ft_tolower.c
+			./sources/ft_tolower.c \
+			./sources/ft_strrev.c \
+			./sources/ft_strjoin.c \
+			./sources/ft_strlen.c
 
 CFLAGS = 	-Wall -Wextra -Werror
 
@@ -40,7 +43,10 @@ OBJ =		ft_putchar.o \
 			ft_isascii.o \
 			ft_isprint.o \
 			ft_toupper.o \
-			ft_tolower.o
+			ft_tolower.o \
+			ft_strrev.o \
+			ft_strjoin.o \
+			ft_strlen.o
 
 INCLUDES =	-I./includes
 
