@@ -6,7 +6,7 @@
 /*   By: klescaud <klescaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/26 02:37:43 by klescaud          #+#    #+#             */
-/*   Updated: 2015/05/13 18:55:57 by klescaud         ###   ########.fr       */
+/*   Updated: 2015/05/19 15:20:42 by klescaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,8 @@ int		ft_toupper(int c);
 int		ft_tolower(int c);
 char	*ft_strrev(char *s);
 char	*ft_strjoin(char const *s1, char const *s2);
+int		ft_last_int(int *x);
+char	*ft_stradd(char *s1, char s2);
+char	*ft_itoa(int n);
 
 #endif

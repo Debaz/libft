@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_stradd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: klescaud <klescaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/13 18:23:16 by klescaud          #+#    #+#             */
-/*   Updated: 2015/05/19 15:19:57 by klescaud         ###   ########.fr       */
+/*   Created: 2015/05/19 14:48:57 by klescaud          #+#    #+#             */
+/*   Updated: 2015/05/19 15:17:25 by klescaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-#include <stdio.h>
-
-int		main(void)
+char	*ft_stradd(char *s1, char s2)
 {
-	int		nmb;
+  char *str;
+  int	i;
 
-	nmb = 1547;
-	ft_putendl(ft_itoa(nmb));
-	return (0);
+  i = 0;
+  str = malloc(sizeof(char) * (ft_strlen(s1) + 2));
+  while (i <= (int)ft_strlen(s1))
+	{
+	  str[i] = s1[i];
+	  i++;
+	}
+  str[i] = s2;
+  i++;
+  str[i] = '\0';
+  return (str);
 }

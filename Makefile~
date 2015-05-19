@@ -6,54 +6,64 @@
 #    By: klescaud <klescaud@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/04 21:24:16 by klescaud          #+#    #+#              #
-#    Updated: 2015/05/04 18:36:54 by klescaud         ###   ########.fr        #
+#    Updated: 2015/05/19 14:58:37 by klescaud         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 NAME = 		libft.a
 
-SRCS = 		./source/ft_atoi.c \
-			./source/ft_isalnum.c \
-			./source/ft_isalpha.c \
-			./source/ft_isascii.c \
-			./source/ft_isdigit.c \
-			./source/ft_isprint.c \
-			./source/ft_putchar.c \
-			./source/ft_putstr.c \
-			./source/ft_strcmp.c \
-			./source/ft_strcpy.c \
-			./source/ft_strdup.c \
-			./source/ft_strlen.c \
-			./source/ft_strrev.c \
-			./source/ft_tolower.c \
-			./source/ft_toupper.c
+SRCS =		./sources/ft_putchar.c \
+			./sources/ft_putchar_fd.c \
+			./sources/ft_putstr.c \
+			./sources/ft_putstr_fd.c \
+			./sources/ft_putendl.c \
+			./sources/ft_putendl_fd.c \
+			./sources/ft_isalpha.c \
+			./sources/ft_isdigit.c \
+			./sources/ft_isalnum.c \
+			./sources/ft_isascii.c \
+			./sources/ft_isprint.c \
+			./sources/ft_toupper.c \
+			./sources/ft_tolower.c \
+			./sources/ft_strrev.c \
+			./sources/ft_strjoin.c \
+			./sources/ft_itoa.c \
+			./sources/ft_strlen.c
 
-CFLAGS = 	-Wall -Wextra -Werror $(INCLUDES)
+CFLAGS = 	-Wall -Wextra -Werror
 
-OBJ =		ft_atoi.o \
-			ft_isalnum.o \
-			ft_isalpha.o \
-			ft_isascii.o \
-			ft_isdigit.o \
-			ft_isprint.o \
-			ft_putchar.o \
+OBJ =		ft_putchar.o \
+			ft_putchar_fd.o \
 			ft_putstr.o \
-			ft_strcmp.o \
-			ft_strcpy.o \
-			ft_strdup.o \
-			ft_strlen.o \
-			ft_strrev.o \
+			ft_putstr_fd.o \
+			ft_putendl.o \
+			ft_putendl_fd.o \
+			ft_isalpha.o \
+			ft_isdigit.o \
+			ft_isalnum.o \
+			ft_isascii.o \
+			ft_isprint.o \
+			ft_toupper.o \
 			ft_tolower.o \
-			ft_toupper.o
+			ft_strrev.o \
+			ft_strjoin.o \
+			ft_itoa.o \
+			ft_strlen.o
 
 INCLUDES =	-I./includes
 
 all: $(NAME)
 
 $(NAME):
-	gcc -c $(SRCS) $(CFLAGS)
+	gcc -c $(SRCS) $(CFLAGS) $(INCLUDES)
 	ar -rc $(NAME) $(OBJ)
 	ranlib $(NAME)
+
+test:
+	gcc -o Testfile test.c -L. -lft $(INCLUDES)
+
+cleantest:
+	rm Testfile
 
 clean:
 	rm $(OBJ)
