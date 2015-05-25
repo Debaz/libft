@@ -6,7 +6,7 @@
 /*   By: klescaud <klescaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/26 02:37:43 by klescaud          #+#    #+#             */
-/*   Updated: 2015/05/19 15:20:42 by klescaud         ###   ########.fr       */
+/*   Updated: 2015/05/25 11:40:54 by klescaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,9 @@ char	*ft_strjoin(char const *s1, char const *s2);
 int		ft_last_int(int *x);
 char	*ft_stradd(char *s1, char s2);
 char	*ft_itoa(int n);
+int		ft_strcmp(const char *s1, const char *s2);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+char	*ft_strcpy(char *dst, const char *src);
+char	*ft_strdup(const char *s1);
 
 #endif

@@ -1,21 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: klescaud <klescaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/13 18:23:16 by klescaud          #+#    #+#             */
-/*   Updated: 2015/05/25 11:46:59 by klescaud         ###   ########.fr       */
+/*   Created: 2015/05/25 11:30:53 by klescaud          #+#    #+#             */
+/*   Updated: 2015/05/25 11:35:51 by klescaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-#include <stdio.h>
-
-int		main(void)
+char	*ft_strdup(const char *s1)
 {
-	ft_putendl(ft_itoa(42));
-	return (0);
+	char	*dup;
+	int		i;
+
+	if ((dup = malloc(sizeof(char*) * ft_strlen(s1) + 1)) == NULL)
+		return (NULL);
+	i = 0;
+	while (s1[i])
+	{
+		dup[i] = s1[i];
+		i++;
+	}
+	dup[i] = '\0';
+	return (dup);
 }

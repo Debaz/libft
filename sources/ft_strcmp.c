@@ -1,21 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: klescaud <klescaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/13 18:23:16 by klescaud          #+#    #+#             */
-/*   Updated: 2015/05/25 11:46:59 by klescaud         ###   ########.fr       */
+/*   Created: 2015/05/25 11:22:05 by klescaud          #+#    #+#             */
+/*   Updated: 2015/05/25 11:29:21 by klescaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-#include <stdio.h>
-
-int		main(void)
+int		ft_strcmp(const char *s1, const char *s2)
 {
-	ft_putendl(ft_itoa(42));
+	int		i;
+
+	i = 0;
+	while (s1[i])
+	{
+		if (s1[i] > s2[i])
+			return (1);
+		else if (s1[i] < s2[i])
+			return (-1);
+		else
+			i++;
+	}
 	return (0);
 }

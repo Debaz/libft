@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: klescaud <klescaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/13 18:23:16 by klescaud          #+#    #+#             */
-/*   Updated: 2015/05/25 11:46:59 by klescaud         ###   ########.fr       */
+/*   Created: 2015/05/25 11:27:14 by klescaud          #+#    #+#             */
+/*   Updated: 2015/05/25 11:29:00 by klescaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-#include <stdio.h>
-
-int		main(void)
+char	*ft_strcpy(char *dst, const char *src)
 {
-	ft_putendl(ft_itoa(42));
-	return (0);
+	int		i;
+
+	i = 0;
+	while (src[i])
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	return (dst);
 }
