@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_ten_pow.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: klescaud <klescaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/13 18:23:16 by klescaud          #+#    #+#             */
-/*   Updated: 2015/05/26 12:11:55 by klescaud         ###   ########.fr       */
+/*   Created: 2015/05/26 11:52:45 by klescaud          #+#    #+#             */
+/*   Updated: 2015/05/26 11:56:29 by klescaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-#include <stdio.h>
-
-int		main(int ac, char **av)
+int		ft_ten_pow(int nb, int pow)
 {
-	if (ac == 2)
+	int		res;
+	int		i;
+
+	i = pow;
+	res = nb;
+	while (i > 0)
 	{
-		printf("L'argument vaut %d.\n", ft_atoi(av[1]));
+		res = res * 10;
 	}
-	return (0);
+	return (res);
 }
