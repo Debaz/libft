@@ -6,7 +6,7 @@
 /*   By: klescaud <klescaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/19 14:48:36 by klescaud          #+#    #+#             */
-/*   Updated: 2015/05/25 11:50:57 by klescaud         ###   ########.fr       */
+/*   Updated: 2015/05/27 13:29:04 by klescaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,20 +34,23 @@ int			ft_last_int(int *x)
 	return (res);
 }
 
-#include <stdio.h>
-
 char*		ft_itoa(int n)
 {
 	char	*str;
+	int		negate;
 
+	negate = 0;
+	if (n < 0)
+	{
+		n = -n;
+		negate = 1;
+	}
 	str = malloc(sizeof(char) * 1);
 	str[0] = '\0';
-	ft_putendl("Lest int used.");
 	while (n != 0)
-	{
 		str = ft_stradd(str, ft_mini_itoa(ft_last_int(&n)));
-		printf("Le nombre vaut %d.\n", n);
-	}
+	if (negate == 1)
+		str = ft_stradd(str, '-');
 	str = ft_strrev(str);
 	return (str);
 }

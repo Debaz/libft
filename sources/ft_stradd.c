@@ -6,7 +6,7 @@
 /*   By: klescaud <klescaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/19 14:48:57 by klescaud          #+#    #+#             */
-/*   Updated: 2015/05/19 15:17:25 by klescaud         ###   ########.fr       */
+/*   Updated: 2015/05/27 13:23:58 by klescaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,11 @@
 
 char	*ft_stradd(char *s1, char s2)
 {
-  char *str;
-  int	i;
+	char	*temp;
 
-  i = 0;
-  str = malloc(sizeof(char) * (ft_strlen(s1) + 2));
-  while (i <= (int)ft_strlen(s1))
-	{
-	  str[i] = s1[i];
-	  i++;
-	}
-  str[i] = s2;
-  i++;
-  str[i] = '\0';
-  return (str);
+	temp = malloc(sizeof(char) * ft_strlen(s1) + 2);
+	temp = ft_strcpy(temp, s1);
+	temp[ft_strlen(s1)] = s2;
+	temp[ft_strlen(s1) + 1] = '\0';
+	return (temp);
 }

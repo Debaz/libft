@@ -6,7 +6,7 @@
 /*   By: klescaud <klescaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/26 02:37:43 by klescaud          #+#    #+#             */
-/*   Updated: 2015/05/26 12:10:08 by klescaud         ###   ########.fr       */
+/*   Updated: 2015/05/27 13:18:13 by klescaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,6 @@ char	*ft_strcpy(char *dst, const char *src);
 char	*ft_strdup(const char *s1);
 int		ft_ten_pow(int nb, int pow);
 int		ft_atoi(char const *str);
+char	ft_mini_itoa(int x);
 
 #endif
