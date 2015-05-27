@@ -6,7 +6,7 @@
 /*   By: klescaud <klescaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/26 11:52:45 by klescaud          #+#    #+#             */
-/*   Updated: 2015/05/26 11:56:29 by klescaud         ###   ########.fr       */
+/*   Updated: 2015/05/27 12:20:53 by klescaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int		ft_ten_pow(int nb, int pow)
 	while (i > 0)
 	{
 		res = res * 10;
+		i--;
 	}
 	return (res);
 }

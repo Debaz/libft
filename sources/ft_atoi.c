@@ -6,7 +6,7 @@
 /*   By: klescaud <klescaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/26 11:43:04 by klescaud          #+#    #+#             */
-/*   Updated: 2015/05/26 12:13:04 by klescaud         ###   ########.fr       */
+/*   Updated: 2015/05/27 12:55:13 by klescaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,19 +25,26 @@ int		ft_atoi(const char *str)
 	char	*temp;
 	int		res;
 	int		i;
+	int		negate;
 
-	i = ft_strlen(str);
+	negate = 0;
+	res = 0;
+	i = ft_strlen(str) - 1;
 	temp = ft_strrev(ft_strdup(str));
-	ft_putendl("ALERTE !");
 	while (i >= 0)
 	{
-		if (i == 0 && temp[i] == '-')
+		ft_putstr("Temp[i] vaut : ");
+		ft_putchar(temp[i]);
+		ft_putchar('\n');
+		if (temp[i] == '-')
 		{
-			res = -res;
-			break;
+			negate = 1;
+			i--;
 		}
 		res = res + ft_ten_pow(ft_mini_atoi(temp[i]), i);
 		i--;
 	}
+	if (negate == 1)
+		res = -res;
 	return (res);
 }

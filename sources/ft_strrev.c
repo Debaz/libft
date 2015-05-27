@@ -6,7 +6,7 @@
 /*   By: klescaud <klescaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/19 14:48:46 by klescaud          #+#    #+#             */
-/*   Updated: 2015/05/19 14:48:47 by klescaud         ###   ########.fr       */
+/*   Updated: 2015/05/27 12:47:17 by klescaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,16 @@
 
 char	*ft_strrev(char *s)
 {
-  int	i;
-  char	c;
+	char	*temp;
+	int		i;
 
-  c = '0';
-  i = 0;
-  while (i <= ((int)ft_strlen(s) / 2))
+	i = 0;
+	temp = ft_strdup(s);
+	while (s[i])
 	{
-	  c = s[i];
-	  s[i] = s[ft_strlen(s) - (i + 1)];
-	  s[ft_strlen(s) - (i + 1)] = c;
-	  i++;
+		temp[(ft_strlen(s) - 1) - i] = s[i];
+		i++;
 	}
-  return (s);
+	s = ft_strcpy(s, temp);
+	return (s);
 }
