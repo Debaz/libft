@@ -6,7 +6,7 @@
 /*   By: klescaud <klescaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/19 14:48:36 by klescaud          #+#    #+#             */
-/*   Updated: 2015/05/27 13:29:04 by klescaud         ###   ########.fr       */
+/*   Updated: 2015/06/01 15:57:54 by klescaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char		ft_mini_itoa(int x)
 {
 	char	res;
-	
+
 	if ((x >= 0) && (x <= 9))
 		res = 48 + (x % 10);
 	else
@@ -34,7 +34,7 @@ int			ft_last_int(int *x)
 	return (res);
 }
 
-char*		ft_itoa(int n)
+char		*ft_itoa(int n)
 {
 	char	*str;
 	int		negate;
