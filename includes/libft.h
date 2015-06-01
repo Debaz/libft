@@ -6,7 +6,7 @@
 /*   By: klescaud <klescaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/26 02:37:43 by klescaud          #+#    #+#             */
-/*   Updated: 2015/05/27 13:40:59 by klescaud         ###   ########.fr       */
+/*   Updated: 2015/06/01 16:23:33 by klescaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,7 @@ int		ft_atoi(char const *str);
 char	ft_mini_itoa(int x);
 void	ft_putnbr(int n);
 void	ft_putnbr_fd(int n, int fd);
+void	ft_bzero(void *s, size_t n);
+void	*ft_memset(void *b, int c, size_t len);
 
 #endif

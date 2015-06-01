@@ -6,7 +6,7 @@
 #    By: klescaud <klescaud@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/04 21:24:16 by klescaud          #+#    #+#              #
-#    Updated: 2015/05/27 14:08:21 by klescaud         ###   ########.fr        #
+#    Updated: 2015/06/01 16:24:20 by klescaud         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -37,6 +37,8 @@ SRCS =		./sources/ft_putchar.c \
 			./sources/ft_ten_pow.c \
 			./sources/ft_putnbr.c \
 			./sources/ft_putnbr_fd.c \
+			./sources/ft_memset.c \
+			./sources/ft_bzero.c \
 			./sources/ft_atoi.c
 
 CFLAGS = 	-Wall -Wextra -Werror
@@ -64,8 +66,10 @@ OBJ =		ft_putchar.o \
 			ft_strcpy.o \
 			ft_strdup.o \
 			ft_ten_pow.o \
-			ft_putnbr.o \
 			ft_putnbr_fd.o \
+			ft_putnbr.o \
+			ft_memset.o \
+			ft_bzero.o \
 			ft_atoi.o
 
 INCLUDES =	-I./includes
