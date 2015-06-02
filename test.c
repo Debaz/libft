@@ -6,16 +6,15 @@
 /*   By: klescaud <klescaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/13 18:23:16 by klescaud          #+#    #+#             */
-/*   Updated: 2015/05/27 13:29:07 by klescaud         ###   ########.fr       */
+/*   Updated: 2015/06/02 14:07:40 by klescaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-#include <stdio.h>
-
-int		main(void)
+int		main(int ac, char **av)
 {
-	ft_putendl(ft_itoa(-424242));
+	if (ac == 2)
+		ft_putendl(ft_itoa(ft_count_words(av[1], ' ')));
 	return (0);
 }

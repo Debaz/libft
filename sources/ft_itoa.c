@@ -6,7 +6,7 @@
 /*   By: klescaud <klescaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/19 14:48:36 by klescaud          #+#    #+#             */
-/*   Updated: 2015/06/01 15:57:54 by klescaud         ###   ########.fr       */
+/*   Updated: 2015/06/02 14:05:06 by klescaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ char		*ft_itoa(int n)
 		n = -n;
 		negate = 1;
 	}
+	if (n == 0)
+		return ("0");
 	str = malloc(sizeof(char) * 1);
 	str[0] = '\0';
 	while (n != 0)
