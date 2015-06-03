@@ -3,53 +3,70 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: klescaud <klescaud@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Debaz <klescaud@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/27 13:44:40 by klescaud          #+#    #+#             */
-/*   Updated: 2015/06/02 14:33:50 by klescaud         ###   ########.fr       */
+/*   Created: 2015/06/03 17:19:55 by Debaz             #+#    #+#             */
+/*   Updated: 2015/06/03 18:05:25 by Debaz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-int		*ft_info_words(const char *s, char c)
+size_t	ft_tablen(char **tab)
 {
-	int		*tab;
-	int		temp_len;
-	int		i;
-	int		j;
+	size_t	len;
 
-	temp_len = 0;
-	i = 1;
-	j = 0;
-	tab = malloc(sizeof(int) * ft_count_words(s, c) + 1);
-	tab[0] = ft_count_words(s, c);
-	while (i <= tab[0])
-	{
-		
-	}
+	len = 0;
+	while (tab[len])
+		len++;
+	return (len);
 }
 
-int		ft_count_words(const char *s, char c)
+char	**ft_tabadd(char **tab, char *str)
 {
-	int		count;
+	char	**temp;
 	int		i;
 
 	i = 0;
-	count = 0;
-	while (s[i])
+	temp = malloc(sizeof(char *) * ft_tablen(tab) + 2);
+	while (tab[i])
 	{
-		if (i == 0 && s[i] != c)
-			count++;
-		if (s[i] != c && s[i - 1] == c)
-			count++;
+		temp[i] = ft_strdup(tab[i]);
 		i++;
 	}
-	return (count);
+	temp[i] = ft_strdup(str);
+	temp[i + 1] = ft_strdup("");
+	free(tab);
+	return (temp);
 }
 
-char	*ft_strplit(const char *s, char c)
+char	**ft_strsplit(const char *s, char c)
 {
-	c = s[0];
-	return (NULL);
+	char	**tab;
+	char	*word;
+	int		i;
+
+	i = 0;
+	tab = malloc(sizeof(char *));
+	tab[0] = malloc(sizeof(char));
+	tab[0][0] = '\0';
+	word = ft_strnew(0);
+	while (s[i])
+	{
+		if (s[i] == c && word[0])
+		{
+			tab = ft_tabadd(tab, word);
+			word = ft_strnew(0);
+		}
+		else if (s[i] != c)
+		{
+			word = ft_stradd(word, s[i]);
+		}
+		i++;
+	}
+	if (word[0])
+		tab = ft_tabadd(tab, word);
+	free(word);
+	return (tab);
 }
+

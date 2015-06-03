@@ -6,7 +6,7 @@
 /*   By: klescaud <klescaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/26 02:37:43 by klescaud          #+#    #+#             */
-/*   Updated: 2015/06/02 13:49:31 by klescaud         ###   ########.fr       */
+/*   Updated: 2015/06/03 18:01:42 by Debaz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	ft_putnbr(int n);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memset(void *b, int c, size_t len);
-char	*ft_strsplit(const char *s, char c);
-int		ft_count_words(const char *s, char c);
+char	**ft_strsplit(const char *s, char c);
+char	*ft_strnew(size_t size);
 
 #endif
