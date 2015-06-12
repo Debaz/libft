@@ -6,66 +6,64 @@
 /*   By: Debaz <klescaud@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/03 17:19:55 by Debaz             #+#    #+#             */
-/*   Updated: 2015/06/04 14:07:52 by klescaud         ###   ########.fr       */
+/*   Updated: 2015/06/12 16:48:59 by klescaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-size_t	ft_tablen(char **tab)
+size_t	ft_wordsize(const char *s, char c)
 {
-	size_t	len;
+	size_t	size;
 
-	len = 0;
-	while (tab[len])
-		len++;
-	return (len);
+	size = 0;
+	while (*s || *s != c)
+	{
+		size++;
+		s++;
+	}
+	return (size);
 }
 
-char	**ft_tabadd(char **tab, char *str)
+size_t	ft_countwords(const char *s, char c)
 {
-	char	**temp;
-	int		i;
+	size_t	count;
 
-	i = 0;
-	temp = malloc(sizeof(char *) * ft_tablen(tab) + 2);
-	while (tab[i])
+	count = 0;
+	while (*s)
 	{
-		ft_putendl("ALERTE !");
-		temp[i] = ft_strdup(tab[i]);
+		if (*s != c && (*(s + 1) == c || *(s + 1) == '\0'))
+			count++;
+		s++;
+	}
+	return (count);
+}
+
+char	**ft_strsplit(char const *s, char c)
+{
+	char	**ptr;
+	size_t	nb_words;
+	size_t	i;
+	size_t	word_size;
+
+	nb_words = ft_countwords(s, c);
+	ptr = malloc((nb_words + 1) * sizeof(*ptr));
+	if (ptr == NULL)
+		return (NULL);
+	i = 0;
+	while (i < nb_words && *s)
+	{
+		while (*s == c)
+			i++;
+		word_size = ft_wordsize(s, c);
+		ptr[i] = malloc((word_size + 1) * sizeof(*ptr));
+		if (ptr[i] == NULL)
+			return (NULL);
+		ft_strncpy(ptr[i], s, word_size);
+		ptr[i][word_size] = '\0';
+		s += word_size;
 		i++;
 	}
-	temp[i] = ft_strdup(str);
-	temp[i + 1] = ft_strnew(0);
-	return (temp);
+	ptr[i] = NULL;
+	return (ptr);
 }
-
-char	**ft_strsplit(const char *s, char c)
-{
-	char	**tab;
-	char	*word;
-	int		i;
-
-	i = 0;
-	tab = malloc(sizeof(char *));
-	tab[0] = ft_strnew(0);
-	word = ft_strnew(0);
-	while (s[i])
-	{
-		if (s[i] == c && (word[0] != '\0'))
-		{
-			tab = ft_tabadd(tab, word);
-			free(word);
-			word = ft_strnew(0);
-		}
-		else if (s[i] != c)
-		{
-			word = ft_stradd(word, s[i]);
-		}
-		i++;
-	}
-	if (word[0] != '\0')
-		tab = ft_tabadd(tab, word);
-	return (tab);
-}
-

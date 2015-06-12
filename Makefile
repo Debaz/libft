@@ -6,7 +6,7 @@
 #    By: klescaud <klescaud@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/04 21:24:16 by klescaud          #+#    #+#              #
-#    Updated: 2015/06/12 15:15:31 by klescaud         ###   ########.fr        #
+#    Updated: 2015/06/12 16:47:30 by klescaud         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -48,7 +48,24 @@ SRCS =		./sources/ft_putchar.c \
 			./sources/ft_strchr.c \
 			./sources/ft_striter.c \
 			./sources/ft_striteri.c \
-			./sources/ft_strmap.c
+			./sources/ft_strmap.c \
+			./sources/ft_strmapi.c \
+			./sources/ft_strequ.c \
+			./sources/ft_strnequ.c \
+			./sources/ft_strsub.c \
+			./sources/ft_strtrim.c \
+			./sources/ft_memcpy.c \
+			./sources/ft_memccpy.c \
+			./sources/ft_memmove.c \
+			./sources/ft_memchr.c \
+			./sources/ft_memcmp.c \
+			./sources/ft_strncpy.c \
+			./sources/ft_strcat.c \
+			./sources/ft_strncat.c \
+			./sources/ft_strlcat.c \
+			./sources/ft_strrchr.c \
+			./sources/ft_strstr.c \
+			./sources/ft_strnstr.c
 
 CFLAGS = 	-Wall -Wextra -Werror
 
@@ -88,7 +105,24 @@ OBJ =		ft_putchar.o \
 			ft_strchr.o \
 			ft_striter.o \
 			ft_striteri.o \
-			ft_strmap.o
+			ft_strmap.o \
+			ft_strmapi.o \
+			ft_strequ.o \
+			ft_strnequ.o \
+			ft_strsub.o \
+			ft_strtrim.o \
+			ft_memcpy.o \
+			ft_memccpy.o \
+			ft_memmove.o \
+			ft_memchr.o \
+			ft_memcmp.o \
+			ft_strncpy.o \
+			ft_strcat.o \
+			ft_strncat.o \
+			ft_strlcat.o \
+			ft_strrchr.o \
+			ft_strstr.o \
+			ft_strnstr.o
 
 INCLUDES =	-I./includes
 
