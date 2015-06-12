@@ -6,7 +6,7 @@
 /*   By: Debaz <klescaud@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/03 17:19:55 by Debaz             #+#    #+#             */
-/*   Updated: 2015/06/03 18:05:25 by Debaz            ###   ########.fr       */
+/*   Updated: 2015/06/04 14:07:52 by klescaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,12 @@ char	**ft_tabadd(char **tab, char *str)
 	temp = malloc(sizeof(char *) * ft_tablen(tab) + 2);
 	while (tab[i])
 	{
+		ft_putendl("ALERTE !");
 		temp[i] = ft_strdup(tab[i]);
 		i++;
 	}
 	temp[i] = ft_strdup(str);
-	temp[i + 1] = ft_strdup("");
-	free(tab);
+	temp[i + 1] = ft_strnew(0);
 	return (temp);
 }
 
@@ -48,14 +48,14 @@ char	**ft_strsplit(const char *s, char c)
 
 	i = 0;
 	tab = malloc(sizeof(char *));
-	tab[0] = malloc(sizeof(char));
-	tab[0][0] = '\0';
+	tab[0] = ft_strnew(0);
 	word = ft_strnew(0);
 	while (s[i])
 	{
-		if (s[i] == c && word[0])
+		if (s[i] == c && (word[0] != '\0'))
 		{
 			tab = ft_tabadd(tab, word);
+			free(word);
 			word = ft_strnew(0);
 		}
 		else if (s[i] != c)
@@ -64,9 +64,8 @@ char	**ft_strsplit(const char *s, char c)
 		}
 		i++;
 	}
-	if (word[0])
+	if (word[0] != '\0')
 		tab = ft_tabadd(tab, word);
-	free(word);
 	return (tab);
 }
 

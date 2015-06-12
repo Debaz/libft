@@ -6,7 +6,7 @@
 #    By: klescaud <klescaud@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/04 21:24:16 by klescaud          #+#    #+#              #
-#    Updated: 2015/06/03 17:53:26 by Debaz            ###   ########.fr        #
+#    Updated: 2015/06/04 13:57:28 by klescaud         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -81,20 +81,28 @@ INCLUDES =	-I./includes
 all: $(NAME)
 
 $(NAME):
-	gcc -c $(SRCS) $(CFLAGS) $(INCLUDES)
-	ar -rc $(NAME) $(OBJ)
-	ranlib $(NAME)
+	@echo "Compilation des binaires ..."
+	@gcc -c $(SRCS) $(CFLAGS) $(INCLUDES)
+	@echo "Compilation de la librairie ..."
+	@ar -rc $(NAME) $(OBJ)
+	@ranlib $(NAME)
+	@echo "Done !"
 
 test:
-	gcc -o Testfile test.c -L. -lft $(INCLUDES)
+	@echo "Compilation du fichier de test ..."
+	@gcc -o Testfile test.c -L. -lft $(INCLUDES)
+	@echo "Done !"
 
 cleantest:
-	rm Testfile
+	@rm Testfile
+	@echo "Fichier de test detruit."
 
 clean:
-	rm $(OBJ)
+	@rm $(OBJ)
+	@echo "Binaires detruits."
 
 fclean: clean
-	rm $(NAME)
+	@rm $(NAME)
+	@echo "Librairie detruite."
 
 re: fclean all
