@@ -6,7 +6,7 @@
 /*   By: klescaud <klescaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/26 02:37:43 by klescaud          #+#    #+#             */
-/*   Updated: 2015/06/03 18:01:42 by Debaz            ###   ########.fr       */
+/*   Updated: 2015/06/12 15:15:29 by klescaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,12 @@ void	ft_bzero(void *s, size_t n);
 void	*ft_memset(void *b, int c, size_t len);
 char	**ft_strsplit(const char *s, char c);
 char	*ft_strnew(size_t size);
+void	*ft_memalloc(size_t size);
+void	ft_memdel(void **ap);
+void	ft_strdel(char **as);
+char	*ft_strchr(const char *str, char c);
+void	ft_striter(char *s, void (*f)(char *));
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+char	*ft_strmap(const char *s, char (*f)(char));
 
 #endif
