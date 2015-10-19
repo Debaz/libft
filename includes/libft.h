@@ -6,7 +6,7 @@
 /*   By: klescaud <klescaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/26 02:37:43 by klescaud          #+#    #+#             */
-/*   Updated: 2015/06/12 16:48:33 by klescaud         ###   ########.fr       */
+/*   Updated: 2015/10/19 09:35:42 by klescaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,7 @@ char	*ft_strncat(char *dest, const char *src, size_t n);
 size_t	ft_strlcat(char *dest, const char *src, size_t n);
 char	*ft_strstr(const char *str, const char *to_find);
 char	*ft_strnstr(const char *str, const char *to_find, size_t n);
+char	*ft_strrchr(const char *str, int c);
+void	ft_strclr(char *s);
 
 #endif

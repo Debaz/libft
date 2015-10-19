@@ -6,7 +6,7 @@
 #    By: klescaud <klescaud@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/04 21:24:16 by klescaud          #+#    #+#              #
-#    Updated: 2015/06/12 16:47:30 by klescaud         ###   ########.fr        #
+#    Updated: 2015/10/19 09:36:33 by klescaud         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -65,7 +65,8 @@ SRCS =		./sources/ft_putchar.c \
 			./sources/ft_strlcat.c \
 			./sources/ft_strrchr.c \
 			./sources/ft_strstr.c \
-			./sources/ft_strnstr.c
+			./sources/ft_strnstr.c \
+			./sources/ft_strclr.c
 
 CFLAGS = 	-Wall -Wextra -Werror
 
@@ -122,7 +123,8 @@ OBJ =		ft_putchar.o \
 			ft_strlcat.o \
 			ft_strrchr.o \
 			ft_strstr.o \
-			ft_strnstr.o
+			ft_strnstr.o \
+			ft_strclr.o
 
 INCLUDES =	-I./includes
 
@@ -138,7 +140,7 @@ $(NAME):
 
 test:
 	@echo "Compilation du fichier de test ..."
-	@gcc -o Testfile test.c -L. -lft $(INCLUDES)
+	@gcc -o Testfile mainlibft.c -L. -lft $(INCLUDES)
 	@echo "Done !"
 
 cleantest:
