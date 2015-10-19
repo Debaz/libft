@@ -6,53 +6,50 @@
 /*   By: klescaud <klescaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/19 14:48:36 by klescaud          #+#    #+#             */
-/*   Updated: 2015/06/03 16:37:21 by Debaz            ###   ########.fr       */
+/*   Updated: 2015/10/19 14:19:00 by klescaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-char		ft_mini_itoa(int x)
+int			ft_nbrlen(int n)
 {
-	char	res;
+	int		nb;
 
-	if ((x >= 0) && (x <= 9))
-		res = 48 + (x % 10);
-	else
-		res = '\0';
-	return (res);
+	nb = 0;
+	while (n > 10)
+	{
+		n /= 10;
+		nb++;
+	}
+	return (nb + 1);
 }
 
-int			ft_last_int(int *x)
+char		*ft_itoa_base(int n, int *i, char *s, char *res)
 {
-	int		res;
-	int		tmp;
+	int tmp;
 
-	res = *x % 10;
-	tmp = *x / 10;
-	*x = tmp;
+	tmp = n;
+	while (tmp / 10 > 10)
+		tmp /= 10;
+	res[i] = s[tmp % 10];
+	ft_itoa_base()
 	return (res);
 }
 
 char		*ft_itoa(int n)
 {
-	char	*str;
-	int		negate;
+	char	*res;
+	int		nbrlen;
+	int		i;
+	int		neg;
 
-	negate = 0;
-	if (n < 0)
-	{
-		n = -n;
-		negate = 1;
-	}
-	if (n == 0)
-		return ("0");
-	str = malloc(sizeof(char) * 1);
-	str[0] = '\0';
-	while (n != 0)
-		str = ft_stradd(str, ft_mini_itoa(ft_last_int(&n)));
-	if (negate == 1)
-		str = ft_stradd(str, '-');
-	str = ft_strrev(str);
-	return (str);
+	neg = (n < 0) ? 1 : 0;
+	nbrlen = ft_nbrlen(n);
+	if ((res = malloc(sizeof(char) * (nbrlen + neg + 1))) == NULL)
+		return (NULL);
+	res[0] = (neg) ? '-' : 0;
+	i = (neg) ? 1 : 0;
+	ft_itoa_base(n, &i, "0123456789", res);
+	return (res);
 }
