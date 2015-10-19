@@ -6,7 +6,7 @@
 /*   By: klescaud <klescaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/12 16:25:57 by klescaud          #+#    #+#             */
-/*   Updated: 2015/06/12 16:28:01 by klescaud         ###   ########.fr       */
+/*   Updated: 2015/10/19 10:40:15 by klescaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,10 @@ char	*ft_strncat(char *dest, const char *src, size_t n)
 	i = 0;
 	while (i < n && src[i])
 	{
-		dest[len + 1] = src[i];
+		dest[len] = src[i];
 		i++;
+		len++;
 	}
-	dest[len + 1] = '\0';
+	dest[len] = '\0';
 	return (dest);
 }

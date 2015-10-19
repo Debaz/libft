@@ -6,42 +6,52 @@
 /*   By: klescaud <klescaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/26 11:43:04 by klescaud          #+#    #+#             */
-/*   Updated: 2015/10/19 09:40:33 by klescaud         ###   ########.fr       */
+/*   Updated: 2015/10/19 11:27:41 by klescaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-int		ft_mini_atoi(char c)
+static int		ft_mini_atoi(char c)
 {
-	int		res;
-
-	res = c - 48;
-	return (res);
+	return (c - '0');
 }
 
-int		ft_atoi(const char *str)
+static char		*ft_strverif(char *str)
 {
-	char	*temp;
+	int		i;
+
+	i = 0;
+	str = ft_strtrim(str);
+	if (str[0] != '+' && str[0] != '-' && !ft_isdigit(str[0]))
+		return (NULL);
+	i++;
+	while (ft_isdigit(str[i]))
+	{
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
+}
+
+int				ft_atoi(const char *str)
+{
+	char	*tmp;
 	int		res;
 	int		i;
-	int		negate;
 
-	negate = 0;
 	res = 0;
-	i = ft_strlen(str) - 1;
-	temp = ft_strrev(ft_strdup(str));
-	while (i >= 0)
+	i = 0;
+	if ((tmp = ft_strverif((char *)str)) == NULL)
+		return (0);
+	if (str[0] == '-' || str[0] == '+')
+		i++;
+	while (str[i])
 	{
-		if (temp[i] == '-')
-		{
-			negate = 1;
-			i--;
-		}
-		res = res + ft_ten_pow(ft_mini_atoi(temp[i]), i);
-		i--;
+		res *= 10;
+		res = res + ft_mini_atoi(str[i]);
 	}
-	if (negate == 1)
-		res = -res;
+	if (str[0] == '-')
+		return (-res);
 	return (res);
 }

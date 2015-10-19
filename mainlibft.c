@@ -6,7 +6,7 @@
 /*   By: student@42 <@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 14:43:06 by student@42        #+#    #+#             */
-/*   Updated: 2013/11/27 15:29:42 by qbollach         ###   ########.fr       */
+/*   Updated: 2015/10/19 11:12:01 by klescaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -880,6 +880,8 @@ int				uf_test_atoi(void)
 	size_t		i, j;
 	char		str[12] = {0};
 
+	printf("123abc %d\n", atoi("123abc"));
+	printf("abc123 %d\n", atoi("abc123"));
 	if (atoi("\n\v\t\r\f -123") != ft_atoi("\n\v\t\r\f -123"))
 		D_ERROR
 	if (atoi("12-3") != ft_atoi("12-3"))
