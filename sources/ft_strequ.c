@@ -6,7 +6,7 @@
 /*   By: klescaud <klescaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/12 15:28:57 by klescaud          #+#    #+#             */
-/*   Updated: 2015/06/12 15:29:54 by klescaud         ###   ########.fr       */
+/*   Updated: 2015/10/19 12:34:29 by klescaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_strequ(const char *s1, const char *s2)
 {
-	if (strcmp(s1, s2) == 0)
+	if ((s1 && s2) && ft_strcmp(s1, s2) == 0)
 		return (1);
 	return (0);
 }

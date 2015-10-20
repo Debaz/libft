@@ -6,25 +6,36 @@
 /*   By: klescaud <klescaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/12 15:37:25 by klescaud          #+#    #+#             */
-/*   Updated: 2015/06/12 15:42:04 by klescaud         ###   ########.fr       */
+/*   Updated: 2015/10/20 10:17:23 by klescaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-char	*ft_strtrim(const char *s)
+static int		ft_blank(int c)
 {
-	size_t	len;
-	char	*s_trim;
+	return ((c == ' ' || c == '\t' || c == '\n') ? 1 : 0);
+}
 
-	while (*s && (*s == ' ' || *s == '\n' || *s == '\t'))
-		s++;
-	len = ft_strlen(s);
-	while (len > 0 
-		   && (s[len - 1] == ' ' || s[len - 1] == '\n' || s[len - 1] == '\t'))
-		len --;
-	s_trim = (char *)malloc((len + 1) * sizeof(*s_trim));
-	ft_strncpy(s_trim, s, len);
-	s_trim[len] = '\0';
-	return (s_trim);
+char			*ft_strtrim(const char *s)
+{
+	char	*fresh;
+	int		end;
+	size_t	i;
+
+	if (!s)
+		return (NULL);
+	end = 0;
+	i = 0;
+	fresh = ft_strnew(ft_strlen(s));
+	while (i < ft_strlen(s))
+	{
+		if (!end && ft_blank(s[i]))
+			i++;
+		else
+			fresh[end++] = s[i++];
+	}
+	while (ft_blank(fresh[--end]))
+		fresh[end] = '\0';
+	return (fresh);
 }

@@ -6,7 +6,7 @@
 #    By: klescaud <klescaud@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/04 21:24:16 by klescaud          #+#    #+#              #
-#    Updated: 2015/10/19 09:36:33 by klescaud         ###   ########.fr        #
+#    Updated: 2015/10/19 12:22:28 by klescaud         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -138,7 +138,7 @@ $(NAME):
 	@ranlib $(NAME)
 	@echo "Done !"
 
-test:
+test: re
 	@echo "Compilation du fichier de test ..."
 	@gcc -o Testfile mainlibft.c -L. -lft $(INCLUDES)
 	@echo "Done !"

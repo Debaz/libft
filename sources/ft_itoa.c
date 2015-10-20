@@ -6,53 +6,50 @@
 /*   By: klescaud <klescaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/19 14:48:36 by klescaud          #+#    #+#             */
-/*   Updated: 2015/06/03 16:37:21 by Debaz            ###   ########.fr       */
+/*   Updated: 2015/10/20 10:08:01 by klescaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-char		ft_mini_itoa(int x)
+static size_t		ft_nblen(int n)
 {
-	char	res;
+	int		len;
 
-	if ((x >= 0) && (x <= 9))
-		res = 48 + (x % 10);
-	else
-		res = '\0';
-	return (res);
+	len = 0;
+	if (n < 0)
+		len++;
+	while (n / 10 != 0)
+	{
+		n = n / 10;
+		len++;
+	}
+	len++;
+	return (len);
 }
 
-int			ft_last_int(int *x)
+char				*ft_itoa(int n)
 {
-	int		res;
-	int		tmp;
+	char	*s;
+	size_t	len;
 
-	res = *x % 10;
-	tmp = *x / 10;
-	*x = tmp;
-	return (res);
-}
-
-char		*ft_itoa(int n)
-{
-	char	*str;
-	int		negate;
-
-	negate = 0;
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	len = ft_nblen(n);
+	if (!(s = (char *)malloc((len + 1) * sizeof(*s))))
+		return (NULL);
 	if (n < 0)
 	{
-		n = -n;
-		negate = 1;
+		s[0] = '-';
+		n *= -1;
 	}
-	if (n == 0)
-		return ("0");
-	str = malloc(sizeof(char) * 1);
-	str[0] = '\0';
-	while (n != 0)
-		str = ft_stradd(str, ft_mini_itoa(ft_last_int(&n)));
-	if (negate == 1)
-		str = ft_stradd(str, '-');
-	str = ft_strrev(str);
-	return (str);
+	s[len] = '\0';
+	while (n >= 10)
+	{
+		s[len - 1] = n % 10 + '0';
+		n = n / 10;
+		len--;
+	}
+	s[len - 1] = n + '0';
+	return (s);
 }
