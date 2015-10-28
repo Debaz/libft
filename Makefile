@@ -6,7 +6,7 @@
 #    By: klescaud <klescaud@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/04 21:24:16 by klescaud          #+#    #+#              #
-#    Updated: 2015/10/19 12:22:28 by klescaud         ###   ########.fr        #
+#    Updated: 2015/10/28 16:23:29 by Debaz            ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -137,15 +137,6 @@ $(NAME):
 	@ar -rc $(NAME) $(OBJ)
 	@ranlib $(NAME)
 	@echo "Done !"
-
-test: re
-	@echo "Compilation du fichier de test ..."
-	@gcc -o Testfile mainlibft.c -L. -lft $(INCLUDES)
-	@echo "Done !"
-
-cleantest:
-	@rm Testfile
-	@echo "Fichier de test detruit."
 
 clean:
 	@rm $(OBJ)
