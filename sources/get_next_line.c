@@ -6,11 +6,11 @@
 /*   By: Debaz <klescaud@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/20 16:44:57 by Debaz             #+#    #+#             */
-/*   Updated: 2015/10/22 10:23:58 by Debaz            ###   ########.fr       */
+/*   Updated: 2015/10/28 16:35:29 by Debaz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <get_next_line.h>
+#include <libft.h>
 
 static int  read_to_buffer(int fd, char **stock)
 {
