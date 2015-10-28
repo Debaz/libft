@@ -6,16 +6,20 @@
 /*   By: klescaud <klescaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/26 02:37:43 by klescaud          #+#    #+#             */
-/*   Updated: 2015/10/19 09:35:42 by klescaud         ###   ########.fr       */
+/*   Updated: 2015/10/28 16:29:04 by Debaz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <unistd.h> /* for write() */
-# include <string.h> /* for size_t type */
-# include <stdlib.h> /* for malloc() & free() */
+# include <unistd.h>
+# include <string.h>
+# include <stdlib.h>
+# include <sys/types.h>
+# include <sys/uio.h>
+
+# define BUFF_SIZE 32
 
 size_t	ft_strlen(const char *s);
 void	ft_putchar(char c);
@@ -74,5 +78,6 @@ char	*ft_strstr(const char *str, const char *to_find);
 char	*ft_strnstr(const char *str, const char *to_find, size_t n);
 char	*ft_strrchr(const char *str, int c);
 void	ft_strclr(char *s);
+int		get_next_line(int fd, char **line);
 
 #endif
