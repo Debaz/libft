@@ -6,7 +6,7 @@
 /*   By: Debaz <klescaud@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/20 16:44:57 by Debaz             #+#    #+#             */
-/*   Updated: 2015/10/28 16:35:29 by Debaz            ###   ########.fr       */
+/*   Updated: 2015/11/25 11:56:57 by Debaz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 static int			read_to_buffer(int fd, char **stock)
 {
-	char			buffer[BUFF_SIZE + 1];
-	int			bytes;
-	int			total_bytes;
-	char			*new_str;
+	char				buffer[BUFF_SIZE + 1];
+	int					bytes;
+	int					total_bytes;
+	char				*new_str;
 
 	total_bytes = 0;
 	while (1)
@@ -35,11 +35,11 @@ static int			read_to_buffer(int fd, char **stock)
 	}
 }
 
-int				get_next_line(int fd, char **line)
+int					get_next_line(int fd, char **line)
 {
-	static char		*stock = NULL;
-	char			*end_index;
-	int			ret;
+	static char			*stock = NULL;
+	char				*end_index;
+	int					ret;
 
 	if ((!stock && (stock = ft_memalloc(sizeof(char))) == NULL) || fd < 0 ||
 		!line)
