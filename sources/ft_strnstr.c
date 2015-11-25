@@ -21,7 +21,7 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 	len = ft_strlen(to_find);
 	while (*str && n >= len)
 	{
-		if (strncmp(str, to_find, len)== 0)
+		if (strncmp(str, to_find, len) == 0)
 			return ((char *)str);
 		str++;
 		n--;

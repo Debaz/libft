@@ -19,4 +19,4 @@ char	*ft_strcat(char *dest, const char *src)
 	len = ft_strlen(dest);
 	ft_strcpy(&dest[len], src);
 	return (dest);
-} 
+}

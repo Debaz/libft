@@ -23,8 +23,8 @@ static char		*ft_strverif(char *str)
 
 	i = 0;
 	while ((str[i] == ' ' || str[i] == '\n' || str[i] == '\r' ||
-		   str[i] == '\t' || str[i] == '\v' || str[i] == '\f') &&
-		   str[i] != '\0')
+		str[i] == '\t' || str[i] == '\v' || str[i] == '\f') &&
+		str[i] != '\0')
 		i++;
 	if (str[i] != '+' && str[i] != '-' && !ft_isdigit(str[i]))
 		return (NULL);

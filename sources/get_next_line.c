@@ -12,11 +12,11 @@
 
 #include <libft.h>
 
-static int  read_to_buffer(int fd, char **stock)
+static int			read_to_buffer(int fd, char **stock)
 {
 	char			buffer[BUFF_SIZE + 1];
-	int				bytes;
-	int				total_bytes;
+	int			bytes;
+	int			total_bytes;
 	char			*new_str;
 
 	total_bytes = 0;
@@ -35,11 +35,11 @@ static int  read_to_buffer(int fd, char **stock)
 	}
 }
 
-int			get_next_line(int fd, char **line)
+int				get_next_line(int fd, char **line)
 {
 	static char		*stock = NULL;
 	char			*end_index;
-	int				ret;
+	int			ret;
 
 	if ((!stock && (stock = ft_memalloc(sizeof(char))) == NULL) || fd < 0 ||
 		!line)
