@@ -6,7 +6,7 @@
 /*   By: klescaud <klescaud@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/26 02:37:43 by klescaud          #+#    #+#             */
-/*   Updated: 2015/12/16 14:56:48 by klescaud         ###   ########.fr       */
+/*   Updated: 2015/12/16 23:58:59 by Debaz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,13 @@
 # include <sys/uio.h>
 
 # define BUFF_SIZE 32
+
+typedef struct		s_list
+{
+	void			*content;
+	size_t			content_size;
+	struct s_list	*next;
+}					t_list;
 
 /*
 ** -----------------------------------------------------------------------------
@@ -123,5 +130,12 @@ void	ft_putnbr_fd(int n, int fd);
 */
 
 int		get_next_line(int fd, char **line);
+
+/*
+** -----------------------------------------------------------------------------
+** list related functions:
+*/
+
+t_list	*ft_lstnew(void const *content, size_t content_size);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: klescaud <klescaud@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/04 21:24:16 by klescaud          #+#    #+#              #
-#    Updated: 2015/10/28 16:30:40 by Debaz            ###   ########.fr        #
+#    Updated: 2015/12/16 23:58:37 by Debaz            ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -67,7 +67,8 @@ SRCS =		./sources/ft_putchar.c \
 			./sources/ft_strstr.c \
 			./sources/ft_strnstr.c \
 			./sources/ft_strclr.c \
-			./sources/get_next_line.c
+			./sources/get_next_line.c \
+			./sources/ft_lstnew.c
 
 CFLAGS = 	-Wall -Wextra -Werror
 
@@ -126,7 +127,8 @@ OBJ =		ft_putchar.o \
 			ft_strstr.o \
 			ft_strnstr.o \
 			ft_strclr.o \
-			get_next_line.o
+			get_next_line.o \
+			ft_lstnew.o
 
 INCLUDES =	-I./includes
 
