@@ -6,7 +6,7 @@
 #    By: klescaud <klescaud@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/04 21:24:16 by klescaud          #+#    #+#              #
-#    Updated: 2015/12/16 23:58:37 by Debaz            ###   ########.fr        #
+#    Updated: 2015/12/17 11:24:32 by klescaud         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -68,7 +68,12 @@ SRCS =		./sources/ft_putchar.c \
 			./sources/ft_strnstr.c \
 			./sources/ft_strclr.c \
 			./sources/get_next_line.c \
-			./sources/ft_lstnew.c
+			./sources/ft_lstnew.c \
+			./sources/ft_lstdelone.c \
+			./sources/ft_lstadd.c \
+			./sources/ft_lstdel.c \
+			./sources/ft_lstiter.c \
+			./sources/ft_lstmap.c
 
 CFLAGS = 	-Wall -Wextra -Werror
 
@@ -128,7 +133,12 @@ OBJ =		ft_putchar.o \
 			ft_strnstr.o \
 			ft_strclr.o \
 			get_next_line.o \
-			ft_lstnew.o
+			ft_lstnew.o \
+			ft_lstdelone.o \
+			ft_lstadd.o \
+			ft_lstdel.o \
+			ft_lstiter.o \
+			ft_lstmap.o
 
 INCLUDES =	-I./includes
 
